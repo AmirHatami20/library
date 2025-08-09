@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme inline {
+    --color-background: #111624;
+    --color-primary: #EED1AC;
+    --breakpoint-xs: 420px;
+}
+
+@layer base {
+    button {
+        cursor: pointer;
+    }
+}
+
+@layer utilities {
+    .container {
+        margin-inline: auto;
+        position: relative;
+        width: 90% !important;
+
+        @variant sm {
+            max-width: 640px;
+        }
+        @variant md {
+            max-width: 768px;
+        }
+        @variant lg {
+            max-width: 1024px;
+        }
+        @variant xl {
+            max-width: 1100px !important;
+        }
+    }
+
+    .primary-button {
+        @apply flex items-center justify-center bg-primary gap-x-2 py-1 px-6 font-semibold rounded-md shadow-md shadow-primary/50 text-background transform transition duration-300 hover:scale-105 hover:bg-amber-500;
+    }
+
+    .auth-input {
+        @apply w-full h-full rounded-sm bg-[#232839] placeholder-white px-3.5 py-2.5 text-sm;
+    }
+
+    .admin-input {
+        @apply w-full h-full rounded-sm border border-[#CBD5E1] bg-white text-sm px-3 py-2 placeholder-gray-600
+    }
+}
